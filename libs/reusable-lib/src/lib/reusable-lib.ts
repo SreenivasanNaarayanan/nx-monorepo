@@ -1,3 +1,3 @@
 export function reusableLib(): string {
-  return 'reusable-lib-3';
+  return 'reusable-lib-4';
 }
