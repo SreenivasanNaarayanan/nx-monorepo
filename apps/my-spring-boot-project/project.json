@@ -1,0 +1,72 @@
+{
+  "name": "my-spring-boot-project",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/my-spring-boot-project/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nxrocks/nx-spring-boot:build",
+      "options": {
+        "root": "apps/my-spring-boot-project"
+      },
+      "dependsOn": [
+        "^install"
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/my-spring-boot-project/target"
+      ]
+    },
+    "install": {
+      "executor": "@nxrocks/nx-spring-boot:install",
+      "options": {
+        "root": "apps/my-spring-boot-project"
+      },
+      "outputs": [
+        "{workspaceRoot}/apps/my-spring-boot-project/target"
+      ]
+    },
+    "test": {
+      "executor": "@nxrocks/nx-spring-boot:test",
+      "options": {
+        "root": "apps/my-spring-boot-project"
+      },
+      "outputs": [
+        "{workspaceRoot}/apps/my-spring-boot-project/target"
+      ]
+    },
+    "clean": {
+      "executor": "@nxrocks/nx-spring-boot:clean",
+      "options": {
+        "root": "apps/my-spring-boot-project"
+      }
+    },
+    "run": {
+      "executor": "@nxrocks/nx-spring-boot:run",
+      "options": {
+        "root": "apps/my-spring-boot-project"
+      }
+    },
+    "serve": {
+      "executor": "@nxrocks/nx-spring-boot:serve",
+      "options": {
+        "root": "apps/my-spring-boot-project"
+      }
+    },
+    "build-image": {
+      "executor": "@nxrocks/nx-spring-boot:build-image",
+      "options": {
+        "root": "apps/my-spring-boot-project"
+      },
+      "outputs": [
+        "{workspaceRoot}/apps/my-spring-boot-project/target"
+      ]
+    },
+    "build-info": {
+      "executor": "@nxrocks/nx-spring-boot:build-info",
+      "options": {
+        "root": "apps/my-spring-boot-project"
+      }
+    }
+  },
+  "tags": []
+}

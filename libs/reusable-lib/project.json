@@ -1,0 +1,38 @@
+{
+  "name": "reusable-lib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/reusable-lib/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/reusable-lib",
+        "main": "libs/reusable-lib/src/index.ts",
+        "tsConfig": "libs/reusable-lib/tsconfig.lib.json",
+        "assets": ["libs/reusable-lib/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs reusable-lib {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/reusable-lib/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/libs/reusable-lib"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/libs/reusable-lib"
+      }
+    }
+  },
+  "tags": []
+}
