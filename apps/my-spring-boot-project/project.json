@@ -26,13 +26,11 @@
       ]
     },
     "test": {
-      "executor": "@nxrocks/nx-spring-boot:test",
+      "executor": "nx:run-commands",
       "options": {
-        "root": "apps/my-spring-boot-project"
-      },
-      "outputs": [
-        "{workspaceRoot}/apps/my-spring-boot-project/target"
-      ]
+        "cwd": "apps/my-spring-boot-project",
+        "command": "mvn clean install"
+      }
     },
     "clean": {
       "executor": "@nxrocks/nx-spring-boot:clean",
