@@ -1,5 +1,6 @@
 {
   "name": "@sreeni/reusable-lib",
   "version": "0.0.3",
-  "type": "commonjs"
+  "type": "commonjs",
+  "gitHead": "1c7e96697ecf5848473ac772bda740c27ea78f2f"
 }
