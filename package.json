@@ -2,7 +2,11 @@
   "name": "@nx-monorepo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "affected:build": "nx affected:build --configuration=production",
+    "affected:test": "nx affected:test --configuration=production",
+    "affected:lint": "nx affected:lint --configuration=production"
+  },
   "private": true,
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
