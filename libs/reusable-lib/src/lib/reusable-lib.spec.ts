@@ -2,6 +2,6 @@ import { reusableLib } from './reusable-lib';
 
 describe('reusableLib', () => {
   it('should work', () => {
-    expect(reusableLib()).toEqual('reusable-lib-1');
+    expect(reusableLib()).toEqual('reusable-lib-2');
   });
 });
