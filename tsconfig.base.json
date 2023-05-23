@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sreeni/my-react-lib": ["libs/my-react-lib/src/index.ts"],
-      "@sreeni/reusable-lib": ["libs/reusable-lib/src/index.ts"]
+      "@sreeni1312/my-react-lib": ["libs/my-react-lib/src/index.ts"],
+      "@sreeni1312/reusable-lib": ["libs/reusable-lib/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
