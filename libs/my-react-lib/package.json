@@ -1,10 +1,10 @@
 {
   "name": "@sreeni1312/my-react-lib",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "dependencies": {
-    "@sreeni1312/reusable-lib": "*"
+    "@sreeni1312/reusable-lib": "^0.0.21"
   },
   "exports": {
     ".": {
