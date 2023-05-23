@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "main": "./index.js",
   "types": "./index.d.ts",
-  "publishConfig": {
-    "@sreeni1312:registry": "https://npm.pkg.github.com/sreeni1312"
-  },
   "exports": {
     ".": {
       "import": "./index.mjs",
