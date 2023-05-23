@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/SreenivasanNaarayanan/nx-monorepo/compare/@sreeni1312/my-react-lib@0.2.0...@sreeni1312/my-react-lib@0.3.0) (2023-05-23)
+
+### Features
+
+- bump react lib ([5bfda7e](https://github.com/SreenivasanNaarayanan/nx-monorepo/commit/5bfda7e2d72b335720a053cbebb6bf2b40a39c14))
+
 # [0.2.0](https://github.com/SreenivasanNaarayanan/nx-monorepo/compare/@sreeni1312/my-react-lib@0.1.0...@sreeni1312/my-react-lib@0.2.0) (2023-05-23)
 
 ### Bug Fixes
