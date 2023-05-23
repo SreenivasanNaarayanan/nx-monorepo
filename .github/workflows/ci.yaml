@@ -28,11 +28,11 @@ jobs:
       - run: npm ci
       - run: git config --global user.name "sreeni"
       - run: git config --global user.email "sreeni.san1312@gmail.com"
-      - run: npx lerna version --yes --conventional-commits
+      - run: git remote set-url --push origin https://SreenivasanNaarayanan:$GITHUB_TOKEN@github.com/nx-monorepo
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npx lerna version --yes --conventional-commits
       - run: npx lerna publish from-git --yes --no-private
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ github.token }}
       - run: npx nx print-affected --target=build
