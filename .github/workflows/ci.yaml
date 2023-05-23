@@ -36,6 +36,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.AUTH_TOKEN }}
       - run: npm config set registry https://registry.npmjs.org/
+      - run: npm config set access public
       - name: Setup npm
         run: |
           echo //registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN} >> .npmrc
