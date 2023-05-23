@@ -29,6 +29,7 @@ jobs:
       - run: npm ci
       - run: git config --global user.name "sreeni"
       - run: git config --global user.email "sreeni.san1312@gmail.com"
+      - run: npm config set registry http://registry.npmjs.org
 #      - run: git remote set-url origin https://SreenivasanNaarayanan:$GITHUB_AUTH_TOKEN@github.com/SreenivasanNaarayanan/nx-monorepo.git
 #        env:
 #          GITHUB_AUTH_TOKEN:  ${{ secrets.AUTH_TOKEN }}
