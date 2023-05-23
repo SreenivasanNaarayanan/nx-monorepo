@@ -1,5 +1,5 @@
 import styles from './page.module.css';
-import {MyReactLib} from '@sreeni/my-react-lib';
+import {MyReactLib} from '@sreeni1312/my-react-lib';
 
 export default async function Index() {
   /*
