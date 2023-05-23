@@ -5,8 +5,8 @@ on:
       - main
   pull_request:
 permissions:
-  contents: 'read'
-  actions: 'read'
+  contents: 'write'
+  actions: 'write'
 jobs:
   main:
     runs-on: ubuntu-latest
