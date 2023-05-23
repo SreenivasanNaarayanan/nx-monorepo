@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0 (2023-05-23)
+
+### Features
+
+- bump react lib ([113e9ec](https://github.com/SreenivasanNaarayanan/nx-monorepo/commit/113e9ec9171bf783a9d85b536dadd58ff29901f3))
+
 ## 0.0.5 (2023-05-23)
 
 ### Bug Fixes
