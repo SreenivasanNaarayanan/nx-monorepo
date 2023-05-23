@@ -29,7 +29,7 @@ jobs:
       - run: npm ci
       - run: git config --global user.name "sreeni"
       - run: git config --global user.email "sreeni.san1312@gmail.com"
-      - run: npm config set registry https://registry.npmjs.org
+      - run: npm config set registry https://registry.npmjs.org/
 #      - run: git remote set-url origin https://SreenivasanNaarayanan:$GITHUB_AUTH_TOKEN@github.com/SreenivasanNaarayanan/nx-monorepo.git
 #        env:
 #          GITHUB_AUTH_TOKEN:  ${{ secrets.AUTH_TOKEN }}
@@ -38,7 +38,7 @@ jobs:
           GH_TOKEN: ${{ secrets.AUTH_TOKEN }}
       - name: "Setup npm" # Add our registry to npm config
         run: | # Custom action
-            npm set registry https://registry.npmjs.org
+            npm set registry https://registry.npmjs.org/
             npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
       - run: npx lerna publish from-git --yes --no-private
 #        env:
