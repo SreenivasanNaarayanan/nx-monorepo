@@ -26,7 +26,7 @@ jobs:
           scope: '@sreeni1312'
       - uses: nrwl/nx-set-shas@v3
       - run: npm ci
-      - run: npx lerna publish from-git --yes --no-private
+      - run: npx lerna publish from-git --yes --no-private --conventional-commits
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: npx nx print-affected --target=build
