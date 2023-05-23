@@ -26,6 +26,8 @@ jobs:
           scope: '@sreeni1312'
       - uses: nrwl/nx-set-shas@v3
       - run: npm ci
+      - run: git config --global user.name "sreeni"
+      - run: git config --global user.email "sreeni.san1312@gmail.com"
       - run: npx lerna version --yes --conventional-commits
       - run: npx lerna publish from-git --yes --no-private
         env:
