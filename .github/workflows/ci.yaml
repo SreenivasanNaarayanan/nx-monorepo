@@ -21,6 +21,11 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 18
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@sreeni1312'
       - uses: nrwl/nx-set-shas@v3
       - run: npm ci
+      - run: npx lerna publish from-git --yes --no-private
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: npx nx print-affected --target=build
