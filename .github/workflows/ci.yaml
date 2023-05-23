@@ -19,23 +19,23 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '17'
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
           scope: '@sreeni1312'
           cache: 'npm'
       - uses: nrwl/nx-set-shas@v3
-      - run: npm ci 
+      - run: npm ci
       - run: git config --global user.name "sreeni"
       - run: git config --global user.email "sreeni.san1312@gmail.com"
-      - run: git remote set-url origin https://SreenivasanNaarayanan:$GITHUB_AUTH_TOKEN@github.com/SreenivasanNaarayanan/nx-monorepo.git
-        env:
-          GITHUB_AUTH_TOKEN:  ${{ secrets.AUTH_TOKEN }}
+#      - run: git remote set-url origin https://SreenivasanNaarayanan:$GITHUB_AUTH_TOKEN@github.com/SreenivasanNaarayanan/nx-monorepo.git
+#        env:
+#          GITHUB_AUTH_TOKEN:  ${{ secrets.AUTH_TOKEN }}
       - run: npx lerna version --yes --conventional-commits
         env:
           GH_TOKEN: ${{ secrets.AUTH_TOKEN }}
       - run: npx lerna publish from-git --yes --no-private
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+#        env:
+#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: npx nx print-affected --target=build
