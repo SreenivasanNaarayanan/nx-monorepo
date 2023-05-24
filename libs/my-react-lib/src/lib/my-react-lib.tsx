@@ -7,7 +7,7 @@ export interface MyReactLibProps {}
 export function MyReactLib(props: MyReactLibProps) {
   return (
     <div className={styles['container']}>
-      <h1>Welcome to MyReactLib7!</h1>
+      <h1>Welcome to MyReactLib6!</h1>
       <h2>{reusableLib()}</h2>
     </div>
   );
