@@ -25,13 +25,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           scope: '@sreeni1312'
           cache: 'npm'
-      - uses: nrwl/nx-set-shas@v3
-      - run: npm ci
       - run: git config --global user.name "sreeni"
       - run: git config --global user.email "sreeni.san1312@gmail.com"
-#      - run: git remote set-url origin https://SreenivasanNaarayanan:$GITHUB_AUTH_TOKEN@github.com/SreenivasanNaarayanan/nx-monorepo.git
-#        env:
-#          GITHUB_AUTH_TOKEN:  ${{ secrets.AUTH_TOKEN }}
       - run: npx lerna version --yes --conventional-commits
         env:
           GH_TOKEN: ${{ secrets.AUTH_TOKEN }}
@@ -45,6 +40,7 @@ jobs:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: npx lerna publish from-git --yes --no-private
   set-affected:
+    needs: publish-packages
     runs-on: ubuntu-latest
     outputs:
       projects: ${{ steps.set-affected-matrix.outputs.affected}}
@@ -53,9 +49,14 @@ jobs:
         with:
           fetch-depth: 0
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - uses: nrwl/nx-set-shas@v3
+      - run: npm ci
       - id: set-affected-matrix
         run: |
-          AFFECTED_PACKAGES=npx nx print-affected --target=build
+          export AFFECTED_PACKAGES=npx nx print-affected --target=build
           node scripts/get-affected-apps.js $AFFECTED_PACKAGES
           echo "projects=$(cat affectedPackages.txt)" >> $GITHUB_OUTPUT
   deploy-packages:
