@@ -8,7 +8,7 @@ permissions:
   contents: 'write'
   actions: 'write'
 jobs:
-  main:
+  publish-packages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -44,4 +44,29 @@ jobs:
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: npx lerna publish from-git --yes --no-private
-      - run: npx nx print-affected --target=build
+  set-affected:
+    runs-on: ubuntu-latest
+    outputs:
+      projects: ${{ steps.set-affected-matrix.outputs.affected}}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      - id: set-affected-matrix
+        run: |
+          AFFECTED_PACKAGES=npx nx print-affected --target=build
+          node scripts/get-affected-apps.js $AFFECTED_PACKAGES
+          echo "projects=$(cat affectedPackages.txt)" >> $GITHUB_OUTPUT
+  deploy-packages:
+    needs: set-affected
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: ${{ fromJSON(needs.set-affected.outputs.projects) }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      - run: echo ${{ matrix.project }}
