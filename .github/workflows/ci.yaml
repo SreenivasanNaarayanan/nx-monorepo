@@ -56,7 +56,7 @@ jobs:
       - run: npm ci
       - id: set-affected-matrix
         run: |
-          export AFFECTED_PACKAGES=npx nx print-affected --target=build
+          export AFFECTED_PACKAGES=$(npx nx print-affected --target=build)
           node scripts/get-affected-apps.js $AFFECTED_PACKAGES
           echo "projects=$(cat affectedPackages.txt)" >> $GITHUB_OUTPUT
   deploy-packages:
