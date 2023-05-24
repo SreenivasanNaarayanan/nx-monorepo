@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.22 (2023-05-24)
+
+
+### Bug Fixes
+
+* update reusable lib ([eb76cf8](https://github.com/SreenivasanNaarayanan/nx-monorepo/commit/eb76cf8a1e0d149323eec042dcbd0ee3172cc520))
+
+
+
+
+
 ## [0.0.21](https://github.com/SreenivasanNaarayanan/nx-monorepo/compare/@sreeni1312/reusable-lib@0.0.20...@sreeni1312/reusable-lib@0.0.21) (2023-05-23)
 
 ### Bug Fixes
